@@ -26,5 +26,10 @@ public class HealthShip : MonoBehaviour
         }
     }
 
+    public void Spawn()
+    {
+        healthBar.fillAmount = 1;
+    }
+
 
 }

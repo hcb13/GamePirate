@@ -22,6 +22,10 @@ public class DestroyShip : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         gameObject.SetActive(false);
+        
+        GameObject gamePoints = GameObject.FindGameObjectsWithTag("GamePoints")[0];
+        gamePoints.GetComponent<GamePoints>().IncreasePoints();
+
         GetComponent<SpawnShip>().Respawn();
     }
 

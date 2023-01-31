@@ -9,6 +9,7 @@ public class PlayerGameOver : MonoBehaviour
     private void Awake()
     {
         GetComponent<HealthShip>().OnUpdateHealth += GameOver;
+        GetComponent<PlayerHealth>().OnUpdateHealth += GameOver;
     }
 
     private void GameOver(float health)

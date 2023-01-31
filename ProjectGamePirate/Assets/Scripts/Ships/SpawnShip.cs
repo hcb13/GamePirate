@@ -4,18 +4,15 @@ using UnityEngine;
 
 public class SpawnShip : MonoBehaviour
 {
+    [SerializeField]
     private Transform initPosition;
-
-    private void Awake()
-    {
-        initPosition = transform;
-    }
 
     public void Respawn()
     {
         GetComponent<HealthShip>().Spawn();
         transform.position = initPosition.position;
         transform.rotation = initPosition.rotation;
+        WaitToSpawn();
         gameObject.SetActive(true);
     }
 
